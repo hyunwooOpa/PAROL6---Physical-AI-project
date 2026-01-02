@@ -80,7 +80,7 @@ void Init_Joint_2(struct MotorStruct *Joint__)
     Joint__->STEP = PUL6;
     Joint__->SELECT = SELECT6;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 0;
+    Joint__->direction_reversed = 1;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -165,7 +165,7 @@ void Init_Joint_4(struct MotorStruct *Joint__)
     Joint__->STEP = PUL4;
     Joint__->SELECT = SELECT4;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 0;
+    Joint__->direction_reversed = 1;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -207,7 +207,7 @@ void Init_Joint_5(struct MotorStruct *Joint__)
     Joint__->STEP = PUL2;
     Joint__->SELECT = SELECT2;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 0;
+    Joint__->direction_reversed = 1;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -249,7 +249,7 @@ void Init_Joint_6(struct MotorStruct *Joint__)
     Joint__->STEP = PUL3;
     Joint__->SELECT = SELECT3;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 1;
+    Joint__->direction_reversed = 0;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.88;
