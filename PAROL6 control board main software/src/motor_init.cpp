@@ -38,7 +38,7 @@ void Init_Joint_1(struct MotorStruct *Joint__)
     Joint__->STEP = PUL1;
     Joint__->SELECT = SELECT1;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 1;
+    Joint__->direction_reversed = 0;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.7;
@@ -55,7 +55,7 @@ void Init_Joint_1(struct MotorStruct *Joint__)
 void Init_Joint_2(struct MotorStruct *Joint__)
 {
     Joint__->standby_position = -32000; 
-    Joint__->homed_position = 19588;
+    Joint__->homed_position = 18877;// 19588 -> 18877 due to the misalignment after homing (+10 off)
     Joint__->motor_max_current = MOTOR2_MAX_CURRENT;
     Joint__->motor_max_speed = 0;
     Joint__->motor_max_acceleration = 0;
@@ -80,7 +80,7 @@ void Init_Joint_2(struct MotorStruct *Joint__)
     Joint__->STEP = PUL6;
     Joint__->SELECT = SELECT6;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 1;
+    Joint__->direction_reversed = 0;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -97,7 +97,7 @@ void Init_Joint_2(struct MotorStruct *Joint__)
 void Init_Joint_3(struct MotorStruct *Joint__)
 {
     Joint__->standby_position = 57905;
-    Joint__->homed_position = 23020;
+    Joint__->homed_position = 24628; //+ 1608 // 23020 -> 24628 due to the misalignment after homing (+5 off)
     Joint__->motor_max_current = MOTOR3_MAX_CURRENT;
     Joint__->motor_max_speed = 0;
     Joint__->motor_max_acceleration = 0;
@@ -140,7 +140,8 @@ void Init_Joint_4(struct MotorStruct *Joint__)
 {
 
     Joint__->standby_position = 0;
-    Joint__->homed_position = -10200;
+    // Joint__->homed_position = -10200;// -10200 -> -16600 -> 16813 due to the misalignment after homing (-90 off) -3 off
+    Joint__->homed_position = -16813;
     Joint__->motor_max_current = MOTOR4_MAX_CURRENT;
     Joint__->motor_max_speed = 0;
     Joint__->motor_max_acceleration = 0;
@@ -165,7 +166,7 @@ void Init_Joint_4(struct MotorStruct *Joint__)
     Joint__->STEP = PUL4;
     Joint__->SELECT = SELECT4;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 1;
+    Joint__->direction_reversed = 0;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -182,7 +183,8 @@ void Init_Joint_4(struct MotorStruct *Joint__)
 void Init_Joint_5(struct MotorStruct *Joint__)
 {
     Joint__->standby_position = 0;
-    Joint__->homed_position = 8900;
+    // Joint__->homed_position = 8900;
+    Joint__->homed_position = 9042;// +142, +2 off due to the misalignment after homing
     Joint__->motor_max_current = MOTOR5_MAX_CURRENT;
     Joint__->motor_max_speed = 0;
     Joint__->motor_max_acceleration = 0;
@@ -207,7 +209,7 @@ void Init_Joint_5(struct MotorStruct *Joint__)
     Joint__->STEP = PUL2;
     Joint__->SELECT = SELECT2;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 1;
+    Joint__->direction_reversed = 0;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.8;
@@ -223,8 +225,9 @@ void Init_Joint_5(struct MotorStruct *Joint__)
 
 void Init_Joint_6(struct MotorStruct *Joint__)
 {
-    Joint__->standby_position = 32000;
-    Joint__->homed_position = 15900;
+    Joint__->standby_position = 32000; 
+    // Joint__->homed_position = 15900;
+    Joint__->homed_position = 16878;//+978, +5.5 off due to the misalignment after homing
     Joint__->motor_max_current = MOTOR6_MAX_CURRENT;
     Joint__->motor_max_speed = 0;
     Joint__->motor_max_acceleration = 0;
@@ -249,7 +252,7 @@ void Init_Joint_6(struct MotorStruct *Joint__)
     Joint__->STEP = PUL3;
     Joint__->SELECT = SELECT3;
     Joint__->driver_chip_on_board = 0;
-    Joint__->direction_reversed = 0;
+    Joint__->direction_reversed = 1;
     Joint__->irun = 16;
     Joint__->ihold = 16;
     Joint__->hold_multiplier = 0.88;
